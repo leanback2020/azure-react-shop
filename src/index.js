@@ -1,10 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Routes from "./routes"
-import { HelmetProvider } from "react-helmet-async"
-import ProductsContextProvider from "./context/ProductsContext"
-import CartContextProvider from "./context/CartContext"
-
 import "./index.css"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"

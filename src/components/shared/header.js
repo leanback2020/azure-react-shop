@@ -11,15 +11,6 @@ import IconButton from "@material-ui/core/IconButton"
 const Header = () => {
   const { itemCount } = useContext(CartContext)
 
-  function getStyle() {
-    return {
-      background: "#f4f4f4",
-      padding: "5px",
-      borderBottom: "1px #ccc dotted",
-
-      height: "42px",
-    }
-  }
   const StyledBadge = withStyles((theme) => ({
     badge: {
       right: -3,

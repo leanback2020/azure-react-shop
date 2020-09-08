@@ -18,11 +18,16 @@ export const CartReducer = (state, action) => {
           quantity: 1,
         })
       }
-
       return {
         ...state,
         ...sumItems(state.cartItems),
         cartItems: [...state.cartItems],
+      }
+    case "flashMessage":
+      console.log("Flash: " + action.payload)
+      return {
+        ...state,
+        messages: [action.payload],
       }
     case "REMOVE_ITEM":
       return {

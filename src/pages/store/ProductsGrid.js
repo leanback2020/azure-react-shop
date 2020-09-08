@@ -1,15 +1,20 @@
 import React, { useContext, useEffect } from "react"
 import ProductItem from "./ProductItem"
+import LoadingDotsIcon from "../../components/LoadingDotsIcon"
 import { ProductsContext } from "../../context/ProductsContext"
 import styles from "./ProductsGrid.module.scss"
 
 const ProductsGrid = () => {
-  const { products, getProducts } = useContext(ProductsContext)
+  const { products, getProducts, loading } = useContext(ProductsContext)
 
   useEffect(() => {
     getProducts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  if (loading) {
+    return <LoadingDotsIcon />
+  }
 
   return (
     <div className={styles.p__container}>

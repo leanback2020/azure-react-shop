@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import Layout from "../../components/Layout"
 
 import CartProducts from "./CartProducts"
@@ -7,7 +7,12 @@ import { formatNumber } from "../../helpers/utils"
 import { Link } from "react-router-dom"
 
 const Cart = () => {
-  const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext)
+  const { total, cartItems, itemCount, clearCart, checkout, handleCheckout, messages } = useContext(CartContext)
+
+  useEffect(() => {
+    messages[0] = ""
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  })
 
   return (
     <Layout title="Cart" description="This is the Cart page">

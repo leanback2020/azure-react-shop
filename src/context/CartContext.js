@@ -4,7 +4,7 @@ import { CartReducer, sumItems } from "./CartReducer"
 export const CartContext = createContext()
 
 const storage = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
-const initialState = { cartItems: storage, ...sumItems(storage), checkout: false }
+const initialState = { messages: [], cartItems: storage, ...sumItems(storage), checkout: false }
 
 const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, initialState)
@@ -19,6 +19,8 @@ const CartContextProvider = ({ children }) => {
 
   const addProduct = (payload) => {
     dispatch({ type: "ADD_ITEM", payload })
+    dispatch({ type: "flashMessage", payload: "Added Product Item Successfully! " + payload.name })
+    state.messages = null
   }
 
   const removeProduct = (payload) => {
@@ -35,6 +37,7 @@ const CartContextProvider = ({ children }) => {
   }
 
   const contextValues = {
+    messages: state.messages,
     removeProduct,
     addProduct,
     increase,

@@ -1,10 +1,15 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import ProductItem from "./ProductItem"
 import { ProductsContext } from "../../context/ProductsContext"
 import styles from "./ProductsGrid.module.scss"
 
 const ProductsGrid = () => {
-  const { products } = useContext(ProductsContext)
+  const { products, getProducts } = useContext(ProductsContext)
+
+  useEffect(() => {
+    getProducts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className={styles.p__container}>
@@ -20,7 +25,7 @@ const ProductsGrid = () => {
       </div>
       <div className={styles.p__grid}>
         {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
+          <ProductItem key={product._id} product={product} />
         ))}
       </div>
       <div className={styles.p__footer}></div>

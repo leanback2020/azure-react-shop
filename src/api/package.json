@@ -6,6 +6,10 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "mongodb": "^3.6.0"
+  },
+  "devDependencies": {
+    "axios": "^0.20.0"
+  }
 }

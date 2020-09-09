@@ -19,8 +19,8 @@ const CartContextProvider = ({ children }) => {
 
   const addProduct = (payload) => {
     dispatch({ type: "ADD_ITEM", payload })
-    dispatch({ type: "flashMessage", payload: "Added Product Item Successfully! " + payload.name })
-    state.messages = null
+    // dispatch({ type: "flashMessage", payload: "Added Product Item Successfully! " + payload.name })
+    // state.messages = null
   }
 
   const removeProduct = (payload) => {

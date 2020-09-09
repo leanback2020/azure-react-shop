@@ -1,3 +1,8 @@
+This ### 'react' project can be tested [here](https://tinyurl.com/leanback-shop).
+It's hosted as a Azure Static Website using GitHub Action workflows.
+
+It's shows how to use the Context API in react.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

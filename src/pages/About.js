@@ -13,7 +13,7 @@ const About = () => {
         </p>
         <p className="lead text-muted">Lorem Ipsum</p>
 
-        <a className="btn btn-primary" href="https://github.com/AlexSegen/react-shopping-cart">
+        <a className="btn btn-primary" href="https://github.com/leanback2020/azure-react-shop">
           <GitHubIcon width={"18px"} /> <span className="ml-2 mr-4">Visit Repo</span>
         </a>
       </div>
